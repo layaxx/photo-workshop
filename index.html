@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Foto-Workshop</title>
+    <meta
+      name="description"
+      content="Foto-Workshop am Feki.de Teamwochenende WS22/23"
+    />
+    <meta name="author" content="Yannick Lang" />
+    <link href="css/impress-common.css" rel="stylesheet" />
+    <link href="css/presentation.css" rel="stylesheet" />
+  </head>
+  <body class="impress-not-supported">
+    <div class="fallback-message">
+      <p>
+        Your browser <b>doesn't support the features required</b> by impress.js,
+        so you are presented with a simplified version of this presentation.
+      </p>
+      <p>
+        For the best experience please use the latest <b>Chrome</b>,
+        <b>Safari</b> or <b>Firefox</b> browser.
+      </p>
+    </div>
+
+    <!-- Some images that are fixed to background in the css -->
+    <img id="screen-image" class="bg" src="img/screen.jpg" />
+
+    <div id="impress" data-transition-duration="1000">
+      <div class="step" data-scale="2" data-x="-500" data-y="-500">
+        <h1>2D navigation</h1>
+
+        <ul>
+          <li>
+            Impress.js allows you to layout your presentation in a 3D space
+          </li>
+          <li>
+            Now
+            <a
+              href="https://github.com/impress/impress.js/tree/master/src/plugins/goto"
+              >the goto plugin</a
+            >
+            also allows you to specify non-linear navigation!
+          </li>
+          <li>
+            This demo can be navigated by
+            <ul>
+              <li>continuously pressing Right Arrow</li>
+              <li>continuously pressing Down Arrow</li>
+              <li>(or freely, pressing Up, Down, Right, Left as you choose)</li>
+            </ul>
+          </li>
+          <li>It's up to you to decide which is the better structure</li>
+        </ul>
+      </div>
+
+      <div
+        id="contents"
+        class="step"
+        data-rel-x="1500"
+        data-rel-y="1500"
+        data-scale="1"
+      >
+        <h1>Choosing a treat</h1>
+
+        <ul>
+          <li>
+            You can choose your preferred treat from:
+            <ul>
+              <li>Ice cream</li>
+              <li>Crisps</li>
+              <li>Apple pie</li>
+            </ul>
+          </li>
+          <li>
+            We will make a structured pro's &amp; con's analysis to arrive at a
+            conclusion
+          </li>
+        </ul>
+      </div>
+
+      <div
+        id="overview"
+        class="step"
+        data-x="3000"
+        data-y="2000"
+        data-scale="9"
+        style="pointer-events: none"
+      ></div>
+    </div>
+
+    <div id="impress-toolbar"></div>
+
+    <div class="impress-progressbar"><div></div></div>
+    <div class="impress-progress"></div>
+
+    <div id="impress-help"></div>
+
+    <script type="text/javascript" src="js/impress.js"></script>
+    <script>
+      impress().init()
+    </script>
+  </body>
+</html>
