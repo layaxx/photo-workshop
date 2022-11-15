@@ -1,7 +1,7 @@
 function render() {
   switch (window.location.hash) {
     case "#/focal-lengths": {
-      console.log("Success")
+      console.log("Rendered: " + window.location.hash)
       drawFocalLengthsGraph()
       break
     }
