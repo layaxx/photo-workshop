@@ -13,26 +13,17 @@ const data = [
 ]
 const ranges = data.map(({ range }) => range)
 
-var xScale = d3.scale
-  .linear()
-  .domain([0, 250])
-  .range([0, width - padding.x])
-
-var yScale = d3.scale
-  .linear()
-  .domain([0, data.length])
-  .range([0, height - padding.y])
+var xScale = d3.scaleLinear([0, 250], [0, width - padding.x])
+var yScale = d3.scaleLinear([0, data.length], [0, height - padding.y])
 
 function drawFocalLengthsGraph() {
   document.querySelector("#focalDistanceGraph").replaceChildren("")
   var canvas = d3
     .select("#focalDistanceGraph")
     .append("svg")
-    .attr({
-      width,
-      height,
-    })
-    .style({ fill: "white" })
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", "white")
 
   // Render Grid
   canvas
@@ -43,27 +34,20 @@ function drawFocalLengthsGraph() {
     .data(d3.range(25))
     .enter()
     .append("line")
-    .attr({
-      x1: (_d, i) => i * xScale(10),
-      x2: (_d, i) => i * xScale(10),
-      y1: 0,
-      y2: height - padding.y - 30,
-    })
-    .style({
-      stroke: "#adadad",
-      "stroke-width": "1px",
-    })
+    .attr("x1", (_d, i) => i * xScale(10))
+    .attr("x2", (_d, i) => i * xScale(10))
+    .attr("y1", 0)
+    .attr("y2", height - padding.y - 30)
+    .style("stroke", "#adadad")
+    .style("stroke-width", "1px")
 
   // Render X Axis
-  var xAxis = d3.svg.axis()
-  xAxis
-    .orient("bottom")
-    .scale(xScale)
-    .tickValues([18, 35, 50, 70, 100, 150, 200])
+  var xAxis = d3.axisBottom(xScale).tickValues([18, 35, 50, 70, 100, 150, 200])
   canvas
     .append("g")
     .attr("transform", `translate(${offset.x},480)`)
     .attr("id", "xaxis")
+    .style("font-size", "35px")
     .call(xAxis)
 
   // Render Chart
@@ -76,10 +60,8 @@ function drawFocalLengthsGraph() {
     .enter()
     .append("rect")
     .attr("height", 19)
-    .attr({
-      x: (d) => xScale(d[0]),
-      y: (d, i) => yScale(i) + 20,
-    })
+    .attr("x", (d) => xScale(d[0]))
+    .attr("y", (_d, i) => yScale(i) + 20)
     .style("fill", "white")
     .attr("width", 0)
 
