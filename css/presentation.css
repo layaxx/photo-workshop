@@ -169,7 +169,7 @@ img {
 img.bg {
   position: fixed;
   z-index: -100;
-  opacity: 1;
+  opacity: 0;
   height: 50%;
   width: auto;
   transition: opacity 2s;
@@ -201,4 +201,8 @@ body.impress-on-overview #applepie-image {
 
 #image-credits {
   color: #352eaa;
+}
+
+.impress-enabled .multi {
+  opacity: 0.01;
 }
