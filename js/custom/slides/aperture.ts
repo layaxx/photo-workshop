@@ -1,7 +1,8 @@
 import * as d3 from "d3"
+import { addOverlay, offset } from "../utils/svg/arrow"
 
 const width = 1000
-const height = 300
+const height = 300 + offset
 
 const data = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16]
 
@@ -22,7 +23,7 @@ export default function render() {
     .data(data)
     .join("circle")
     .attr("cx", getXValue)
-    .attr("cy", height / 2)
+    .attr("cy", offset + (height - offset) / 2)
     .attr("r", getRadius)
 
   // Add Text
@@ -43,7 +44,7 @@ export default function render() {
     .append("circle")
     .attr("class", "shrink")
     .attr("cx", getXValue)
-    .attr("cy", height / 2)
+    .attr("cy", offset + (height - offset) / 2)
     .attr("r", getRadius(data[0]))
   d3.select(id + " svg")
     .selectAll(".shrink")
@@ -51,6 +52,8 @@ export default function render() {
     .duration(1000)
     .ease(d3.easeQuad)
     .attr("r", 0)
+
+  addOverlay(svg, width)
 }
 function getXValue(_v: any, indexOuter: number) {
   return (
@@ -59,7 +62,7 @@ function getXValue(_v: any, indexOuter: number) {
   )
 }
 function getRadius(d: number) {
-  return (1 / d) * 150
+  return (1 / d) * 168
 }
 function getDiameter(d: number) {
   return getRadius(d) * 2
