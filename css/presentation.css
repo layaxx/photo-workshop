@@ -61,7 +61,7 @@ body {
   position: relative;
   display: block;
 
-  width: 900px;
+  width: 1000px;
   height: 700px;
   margin: 20px auto;
   padding: 40px 60px;
@@ -207,4 +207,24 @@ body.impress-on-overview #applepie-image {
 
 .impress-enabled .multi {
   opacity: 0.01;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thirds>* {
+  width: 33%;
+}
+
+
+.halves>* {
+  width: 50%;
+}
+
+.impress-on-aperture-images-zoom #aperture-images,
+.impress-on-iso-images-zoom #iso-images,
+.impress-on-aperture-compare-zoom #aperture-compare {
+  opacity: 1;
 }

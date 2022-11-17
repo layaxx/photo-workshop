@@ -70,6 +70,53 @@
       </div>
 
       <div
+        id="aperture-images"
+        class="step multi"
+        data-rel-x="0"
+        data-rel-y="0"
+        data-scale="1"
+      >
+        <header>
+          <h1>Aperture</h1>
+          <h2>Blende</h2>
+        </header>
+        <div class="flex thirds">
+          <img src="img/aperture/f1-4.jpg" />
+          <img src="img/aperture/f5-6.jpg" />
+          <img src="img/aperture/f22.jpg" />
+        </div>
+      </div>
+
+      <div
+        id="aperture-images-zoom"
+        class="step multi"
+        data-rel-x="0"
+        data-rel-y="0"
+        data-scale="0.5"
+      ></div>
+
+      <div
+        id="aperture-compare"
+        class="step multi"
+        data-rel-x="0"
+        data-rel-y="0"
+        data-scale="1"
+      >
+        <div id="aperture-compare-images" class="flex halves">
+          <img src="img/aperture/cmp/f2-8.jpg" />
+          <img src="img/aperture/cmp/f20.jpg" />
+        </div>
+      </div>
+
+      <div
+        id="aperture-compare-zoom"
+        class="step multi"
+        data-rel-x="0"
+        data-rel-y="0"
+        data-scale="0.6"
+      ></div>
+
+      <div
         id="iso"
         class="step"
         data-rel-x="1500"
@@ -85,16 +132,53 @@
       </div>
 
       <div
-        id="exposure"
-        class="step"
-        data-rel-x="1500"
+        id="iso-images"
+        class="step multi"
+        data-rel-x="0"
         data-rel-y="0"
         data-scale="1"
+      >
+        <header>
+          <h1>ISO</h1>
+          <h2>aka Gain</h2>
+        </header>
+        <div class="flex halves">
+          <img src="img/iso/25600.jpg" />
+          <img src="img/iso/100.jpg" />
+        </div>
+      </div>
+
+      <div
+        id="iso-images-zoom"
+        class="step multi"
+        data-rel-x="0"
+        data-rel-y="300"
+        data-scale="0.4"
+      ></div>
+
+      <div
+        id="exposure"
+        class="step"
+        data-rel-x="-1500"
+        data-rel-y="-1500"
+        data-scale="3"
       >
         <header>
           <h1>Exposure</h1>
           <h2>Belichtung</h2>
         </header>
+
+        <p>Exposure = Shutter Speed + Aperture + ISO</p>
+        <p>=> Tradeoffs</p>
+
+        <pre class="notes">
+          Kann die Kamera recht gut selber machen. Verschiedene Modi um einzelne
+          Werte festzulegen und den Rest automatisch machen zu lassen. 
+          
+          Shutter Speed > je nach situation, 1/brennweite oder kürzer 
+          Aperture > je nach Situation (portrait eher offen, landscape eher geschlossen...)
+          ISO > immer as low as possible
+        </pre>
       </div>
 
       <div
@@ -123,6 +207,12 @@
           <h1>Composition</h1>
           <h2>Komposition</h2>
         </header>
+
+        <ul>
+          <li>Thirds</li>
+          <li>Level</li>
+          <li>Cut-Offs</li>
+        </ul>
       </div>
 
       <div
@@ -144,7 +234,7 @@
 
     <script
       type="text/javascript"
-      src="js/impress.js"
+      src="/js/impress.js"
       onload="impress().init()"
     ></script>
 
