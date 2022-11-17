@@ -8,7 +8,7 @@ const data = [1.4, 2, 2.8, 4, 5.6, 8, 11, 16]
 
 const id = "#apertureGraph" as const
 
-export default function render() {
+export default function initialRender() {
   document.querySelector(id)?.replaceChildren("")
   const svg = d3
     .select(id)
@@ -46,12 +46,6 @@ export default function render() {
     .attr("cx", getXValue)
     .attr("cy", offset + (height - offset) / 2)
     .attr("r", getRadius(data[0]))
-  d3.select(id + " svg")
-    .selectAll(".shrink")
-    .transition()
-    .duration(1000)
-    .ease(d3.easeQuad)
-    .attr("r", 0)
 
   addOverlay(svg, width)
 }
@@ -70,4 +64,13 @@ function getDiameter(d: number) {
 function getDistance(array: number[]) {
   const padding = 15
   return array.reduce((acc, curr) => acc + padding + getDiameter(curr), 0)
+}
+
+export function transition() {
+  d3.select(id + " svg")
+    .selectAll(".shrink")
+    .transition()
+    .duration(1000)
+    .ease(d3.easeQuad)
+    .attr("r", 0)
 }

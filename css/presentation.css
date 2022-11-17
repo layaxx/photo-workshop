@@ -228,3 +228,9 @@ body.impress-on-overview #applepie-image {
 .impress-on-aperture-compare-zoom #aperture-compare {
   opacity: 1;
 }
+
+blockquote.large-quote {
+  font-size: 2em;
+  border-left: solid 10px white;
+  padding-left: 1em;
+}

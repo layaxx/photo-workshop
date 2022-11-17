@@ -19,7 +19,7 @@ const xScale = d3.scaleLinear([0, 250], [0, width - padding.x])
 const yScale = d3.scaleLinear([0, data.length], [0, height - padding.y])
 const id = "#focalDistanceGraph" as const
 
-export default function render() {
+export default function initialRender() {
   document.querySelector(id)?.replaceChildren("")
   const svg = d3
     .select(id)
@@ -71,7 +71,9 @@ export default function render() {
     .attr("y", (_d, i) => yScale(i) + 20)
     .style("fill", "white")
     .attr("width", 0)
+}
 
+export function transition() {
   // Add Animation
   d3.select(id + " svg")
     .selectAll("rect")
