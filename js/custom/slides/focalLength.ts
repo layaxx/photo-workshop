@@ -1,3 +1,5 @@
+import * as d3 from "d3"
+
 const width = 1000
 const height = 550
 const padding = { x: 50, y: 50 }
@@ -13,20 +15,21 @@ const data = [
 ]
 const ranges = data.map(({ range }) => range)
 
-var xScale = d3.scaleLinear([0, 250], [0, width - padding.x])
-var yScale = d3.scaleLinear([0, data.length], [0, height - padding.y])
+const xScale = d3.scaleLinear([0, 250], [0, width - padding.x])
+const yScale = d3.scaleLinear([0, data.length], [0, height - padding.y])
+const id = "#focalDistanceGraph" as const
 
-function drawFocalLengthsGraph() {
-  document.querySelector("#focalDistanceGraph").replaceChildren("")
-  var canvas = d3
-    .select("#focalDistanceGraph")
+export default function render() {
+  document.querySelector(id)?.replaceChildren("")
+  const svg = d3
+    .select(id)
     .append("svg")
     .attr("width", width)
     .attr("height", height)
     .style("fill", "white")
 
   // Render Grid
-  canvas
+  svg
     .append("g")
     .attr("id", "grid")
     .attr("transform", `translate(${offset.x},10)`)
@@ -42,16 +45,20 @@ function drawFocalLengthsGraph() {
     .style("stroke-width", "1px")
 
   // Render X Axis
-  var xAxis = d3.axisBottom(xScale).tickValues([18, 35, 50, 70, 100, 150, 200])
-  canvas
+  const xAxis = d3
+    .axisBottom(xScale)
+    .tickValues([18, 35, 50, 70, 100, 150, 200])
+  svg
     .append("g")
     .attr("transform", `translate(${offset.x},480)`)
     .attr("id", "xaxis")
     .style("font-size", "35px")
     .call(xAxis)
-
+  svg.append("text").text("wide").attr("x", xScale(10)).attr("y", height)
+  svg.append("text").text("normal").attr("x", xScale(40)).attr("y", height)
+  svg.append("text").text("tele").attr("x", xScale(135)).attr("y", height)
   // Render Chart
-  canvas
+  svg
     .append("g")
     .attr("transform", `translate(${offset.x},0)`)
     .attr("id", "bars")
@@ -66,7 +73,7 @@ function drawFocalLengthsGraph() {
     .attr("width", 0)
 
   // Add Animation
-  d3.select("svg")
+  d3.select(id + " svg")
     .selectAll("rect")
     .data(ranges)
     .transition()
