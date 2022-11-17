@@ -27,7 +27,7 @@
     <img id="screen-image" class="bg" src="img/screen.jpg" />
 
     <div id="impress" data-transition-duration="1000">
-      <div class="step" data-scale="1" data-x="-500" data-y="-500">
+      <div id="plan" class="step" data-scale="1" data-x="-500" data-y="-500">
         <h1>Photo-Workshop</h1>
 
         Plan:
@@ -50,6 +50,8 @@
           <h1>Shutter Speed</h1>
           <h2>Verschlusszeit</h2>
         </header>
+
+        <div id="shutterSpeedGraph"></div>
       </div>
 
       <div
@@ -63,6 +65,8 @@
           <h1>Aperture</h1>
           <h2>Blende</h2>
         </header>
+
+        <div id="apertureGraph"></div>
       </div>
 
       <div
@@ -76,6 +80,8 @@
           <h1>ISO</h1>
           <h2>aka Gain</h2>
         </header>
+
+        <div id="ISOGraph"></div>
       </div>
 
       <div
@@ -149,5 +155,6 @@
     <script>
       impress().init()
     </script>
+    <script type="module" src="/js/main.ts"></script>
   </body>
 </html>

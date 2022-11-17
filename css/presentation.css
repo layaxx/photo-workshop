@@ -49,7 +49,7 @@ body {
   font-family: "PT Sans", sans-serif;
   min-height: 740px;
 
-  background: #060326;
+  background: #101f33;
   color: white;
 }
 
@@ -72,6 +72,7 @@ body {
   font-size: 30px;
   letter-spacing: -1px;
 }
+
 /*
     Make inactive steps a little bit transparent.
 */
@@ -103,7 +104,7 @@ li {
 }
 
 /* Highlight.js used for coloring pre > code blocks. */
-pre > code {
+pre>code {
   font-size: 14px;
   text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
@@ -125,6 +126,7 @@ a {
 
   transition: 0.5s;
 }
+
 a:hover,
 a:focus {
   background: rgba(200, 200, 200, 1);
