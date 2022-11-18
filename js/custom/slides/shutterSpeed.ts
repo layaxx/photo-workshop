@@ -35,8 +35,18 @@ export default function render() {
     .data(data)
     .join("text")
     .text((d) => `1/${1 / d}`)
-    .attr("x", (_d, i) => i * (width / data.length))
+    .attr("x", 0)
     .attr("y", offset + (height - offset) / 2)
 
   addOverlay(svg, width)
+}
+
+export function transition() {
+  // Add Animation
+  d3.select(id + " svg")
+    .selectAll("text")
+    .data(data)
+    .transition()
+    .duration(1000)
+    .attr("x", (_d, i) => i * (width / data.length))
 }

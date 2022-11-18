@@ -22,9 +22,19 @@ export default function render() {
     .data(data)
     .join("text")
     .text(String)
-    .attr("x", (_d, i) => (i + 0.5) * (width / data.length))
+    .attr("x", 0)
     .attr("y", offset + (height - offset) / 2)
     .attr("text-anchor", "middle")
 
   addOverlay(svg, width)
+}
+
+export function transition() {
+  // Add Animation
+  d3.select(id + " svg")
+    .selectAll("text")
+    .data(data)
+    .transition()
+    .duration(1000)
+    .attr("x", (_d, i) => (i + 0.5) * (width / data.length))
 }

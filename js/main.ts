@@ -4,8 +4,12 @@ import renderFocalLengthsGraph, {
 import renderApertureGraph, {
   transition as apertureTransition,
 } from "./custom/slides/aperture"
-import renderISOGraph from "./custom/slides/iso"
-import renderShutterSpeedGraph from "./custom/slides/shutterSpeed"
+import renderISOGraph, {
+  transition as ISOTransition,
+} from "./custom/slides/iso"
+import renderShutterSpeedGraph, {
+  transition as shutterSpeedTransition,
+} from "./custom/slides/shutterSpeed"
 
 function render() {
   switch (window.location.hash) {
@@ -17,6 +21,16 @@ function render() {
     case "#/focal-lengths": {
       console.log("Rendered: " + window.location.hash)
       transition()
+      break
+    }
+    case "#/iso": {
+      console.log("Rendered: " + window.location.hash)
+      ISOTransition()
+      break
+    }
+    case "#/shutter-speed": {
+      console.log("Rendered: " + window.location.hash)
+      shutterSpeedTransition()
       break
     }
     default:
