@@ -1,7 +1,7 @@
 import * as d3 from "d3"
 
 const width = 1000
-const height = (width / 4) * 3
+const height = (width / 3) * 2
 
 const id = "#thirdsGraph" as const
 
@@ -67,5 +67,5 @@ export function transition() {
     .selectAll("circle")
     .transition()
     .duration(1000)
-    .attr("r", 50)
+    .attr("r", 30)
 }

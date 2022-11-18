@@ -104,7 +104,7 @@ li {
 }
 
 /* Highlight.js used for coloring pre > code blocks. */
-pre>code {
+pre > code {
   font-size: 14px;
   text-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
@@ -184,7 +184,6 @@ img.bg {
   bottom: 0px;
 }
 
-
 body.impress-on-applepie #applepie-image,
 body.impress-on-applepie-pro #applepie-image,
 body.impress-on-applepie-con #applepie-image,
@@ -196,10 +195,8 @@ body.impress-on-overview #applepie-image {
 
 /*************** Slide specific things ****************************/
 
-
-
 #menu {
-  z-index: 10
+  z-index: 10;
 }
 
 .impress-enabled .multi {
@@ -211,18 +208,21 @@ body.impress-on-overview #applepie-image {
   flex-wrap: wrap;
 }
 
-.thirds>* {
+.thirds > * {
   width: 33%;
 }
 
-.halves>* {
+.halves > * {
   width: 50%;
 }
 
 .impress-on-aperture-images-zoom #aperture-images,
 .impress-on-iso-images-zoom #iso-images,
 .impress-on-shutter-speed-images-zoom #shutter-speed,
-.impress-on-aperture-compare-zoom #aperture-compare {
+.impress-on-aperture-compare-zoom #aperture-compare,
+.impress-on-composition-img-1 #composition,
+.impress-on-composition-img-2 #composition,
+.impress-on-composition-img-3 #composition {
   opacity: 1;
 }
 
@@ -230,4 +230,16 @@ blockquote.large-quote {
   font-size: 2em;
   border-left: solid 10px white;
   padding-left: 1em;
+}
+
+.comp-img {
+  width: 1000px;
+  position: absolute;
+  display: none;
+}
+
+.impress-on-composition-img-1 #comp-img-1,
+.impress-on-composition-img-2 #comp-img-2,
+.impress-on-composition-img-3 #comp-img-3 {
+  display: block;
 }
