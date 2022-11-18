@@ -13,6 +13,9 @@ import renderShutterSpeedGraph, {
 import renderColorBalanceGraph, {
   transition as colorBalanceTransition,
 } from "./custom/slides/colorBalance"
+import renderThirdsGraph, {
+  transition as thirdsTransition,
+} from "./custom/slides/composition"
 
 function render() {
   if (window.location.hash.startsWith("#/aperture")) {
@@ -35,6 +38,10 @@ function render() {
     console.log("Rendered: " + window.location.hash)
     colorBalanceTransition()
   }
+  if (window.location.hash.startsWith("#/composition")) {
+    console.log("Rendered: " + window.location.hash)
+    thirdsTransition()
+  }
 
   console.log("Ignored HashChange to " + window.location.hash)
 }
@@ -47,3 +54,4 @@ renderISOGraph()
 renderApertureGraph()
 renderShutterSpeedGraph()
 renderColorBalanceGraph()
+renderThirdsGraph()
