@@ -218,13 +218,13 @@ body.impress-on-overview #applepie-image {
   width: 33%;
 }
 
-
 .halves>* {
   width: 50%;
 }
 
 .impress-on-aperture-images-zoom #aperture-images,
 .impress-on-iso-images-zoom #iso-images,
+.impress-on-shutter-speed-images-zoom #shutter-speed-images,
 .impress-on-aperture-compare-zoom #aperture-compare {
   opacity: 1;
 }
