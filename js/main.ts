@@ -10,6 +10,9 @@ import renderISOGraph, {
 import renderShutterSpeedGraph, {
   transition as shutterSpeedTransition,
 } from "./custom/slides/shutterSpeed"
+import renderColorBalanceGraph, {
+  transition as colorBalanceTransition,
+} from "./custom/slides/colorBalance"
 
 function render() {
   if (window.location.hash.startsWith("#/aperture")) {
@@ -28,6 +31,10 @@ function render() {
     console.log("Rendered: " + window.location.hash)
     shutterSpeedTransition()
   }
+  if (window.location.hash.startsWith("#/color-balance")) {
+    console.log("Rendered: " + window.location.hash)
+    colorBalanceTransition()
+  }
 
   console.log("Ignored HashChange to " + window.location.hash)
 }
@@ -39,3 +46,4 @@ renderFocalLengthsGraph()
 renderISOGraph()
 renderApertureGraph()
 renderShutterSpeedGraph()
+renderColorBalanceGraph()
