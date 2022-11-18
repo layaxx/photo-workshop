@@ -12,30 +12,24 @@ import renderShutterSpeedGraph, {
 } from "./custom/slides/shutterSpeed"
 
 function render() {
-  switch (window.location.hash) {
-    case "#/aperture": {
-      console.log("Rendered: " + window.location.hash)
-      apertureTransition()
-      break
-    }
-    case "#/focal-lengths": {
-      console.log("Rendered: " + window.location.hash)
-      transition()
-      break
-    }
-    case "#/iso": {
-      console.log("Rendered: " + window.location.hash)
-      ISOTransition()
-      break
-    }
-    case "#/shutter-speed": {
-      console.log("Rendered: " + window.location.hash)
-      shutterSpeedTransition()
-      break
-    }
-    default:
-      console.log("Ignored HashChange to " + window.location.hash)
+  if (window.location.hash.startsWith("#/aperture")) {
+    console.log("Rendered: " + window.location.hash)
+    apertureTransition()
   }
+  if (window.location.hash.startsWith("#/focal-lengths")) {
+    console.log("Rendered: " + window.location.hash)
+    transition()
+  }
+  if (window.location.hash.startsWith("#/iso")) {
+    console.log("Rendered: " + window.location.hash)
+    ISOTransition()
+  }
+  if (window.location.hash.startsWith("#/shutter-speed")) {
+    console.log("Rendered: " + window.location.hash)
+    shutterSpeedTransition()
+  }
+
+  console.log("Ignored HashChange to " + window.location.hash)
 }
 
 window.addEventListener("hashchange", render)
