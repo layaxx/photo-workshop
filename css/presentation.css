@@ -184,11 +184,6 @@ img.bg {
   bottom: 0px;
 }
 
-#screen-image::before {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-}
 
 body.impress-on-applepie #applepie-image,
 body.impress-on-applepie-pro #applepie-image,
@@ -201,8 +196,10 @@ body.impress-on-overview #applepie-image {
 
 /*************** Slide specific things ****************************/
 
-#image-credits {
-  color: #352eaa;
+
+
+#menu {
+  z-index: 10
 }
 
 .impress-enabled .multi {
