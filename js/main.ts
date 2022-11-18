@@ -15,6 +15,8 @@ import renderColorBalanceGraph, {
 } from "./custom/slides/colorBalance"
 import renderThirdsGraph, {
   transition as thirdsTransition,
+  transitionVertical as thirdsTransitionVertical,
+  transitionHorizontal as thirdsTransitionHorizontal,
 } from "./custom/slides/composition"
 
 function render() {
@@ -41,6 +43,14 @@ function render() {
   if (window.location.hash.startsWith("#/composition")) {
     console.log("Rendered: " + window.location.hash)
     thirdsTransition()
+  }
+
+  if (window.location.hash.startsWith("#/composition-img-vert")) {
+    console.log("Rendered: " + window.location.hash)
+    thirdsTransitionVertical()
+  } else if (window.location.hash.startsWith("#/composition-img")) {
+    console.log("Rendered: " + window.location.hash)
+    thirdsTransitionHorizontal()
   }
 
   console.log("Ignored HashChange to " + window.location.hash)

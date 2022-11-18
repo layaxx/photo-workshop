@@ -222,7 +222,9 @@ body.impress-on-overview #applepie-image {
 .impress-on-aperture-compare-zoom #aperture-compare,
 .impress-on-composition-img-1 #composition,
 .impress-on-composition-img-2 #composition,
-.impress-on-composition-img-3 #composition {
+.impress-on-composition-img-3 #composition,
+.impress-on-composition-img-vert-1 #composition,
+.impress-on-composition-img-vert-2 #composition {
   opacity: 1;
 }
 
@@ -238,8 +240,16 @@ blockquote.large-quote {
   display: none;
 }
 
+.comp-img-vert {
+  width: 444px;
+  position: absolute;
+  display: none;
+}
+
 .impress-on-composition-img-1 #comp-img-1,
 .impress-on-composition-img-2 #comp-img-2,
-.impress-on-composition-img-3 #comp-img-3 {
+.impress-on-composition-img-3 #comp-img-3,
+.impress-on-composition-img-vert-1 #comp-img-vert-1,
+.impress-on-composition-img-vert-2 #comp-img-vert-2 {
   display: block;
 }

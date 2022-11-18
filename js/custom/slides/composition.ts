@@ -25,6 +25,7 @@ export default function initialRender() {
 
   groups
     .append("line")
+    .attr("class", "vert")
     .attr("x1", (d) => (d + 1) * (width / 3))
     .attr("x2", (d) => (d + 1) * (width / 3))
     .attr("y1", 0)
@@ -42,10 +43,9 @@ export default function initialRender() {
     .style("stroke-width", "5px")
 
   // circles
-
   svg
     .append("g")
-    .attr("id", "grid")
+    .attr("id", "circles")
     .selectAll("circle")
     .data(
       d3.range(4).map((index) => ({ x: Math.floor(index / 2), y: index % 2 }))
@@ -68,4 +68,58 @@ export function transition() {
     .transition()
     .duration(1000)
     .attr("r", 30)
+}
+
+export function transitionVertical() {
+  const newWidth = (height / 3) * 2
+  // Add Animation
+  d3.select(id + " svg")
+    .transition()
+    .duration(1000)
+    .attr("width", newWidth)
+
+  d3.select(id + " svg")
+    .selectAll("circle")
+    .data(
+      d3.range(4).map((index) => ({ x: Math.floor(index / 2), y: index % 2 }))
+    )
+    .transition()
+    .duration(1000)
+    .attr("cx", (d) => (d.x + 1) * (newWidth / 3))
+    .attr("r", 30)
+
+  d3.select(id + " svg")
+    .selectAll("line.vert")
+    .data(d3.range(2))
+    .transition()
+    .duration(1000)
+    .attr("x1", (d) => (d + 1) * (newWidth / 3))
+    .attr("x2", (d) => (d + 1) * (newWidth / 3))
+}
+
+export function transitionHorizontal() {
+  // Add Animation
+  d3.select(id + " svg")
+    .transition()
+    .duration(1000)
+    .attr("width", width)
+    .attr("height", height)
+
+  d3.select(id + " svg")
+    .selectAll("circle")
+    .data(
+      d3.range(4).map((index) => ({ x: Math.floor(index / 2), y: index % 2 }))
+    )
+    .transition()
+    .duration(1000)
+    .attr("cx", (d) => (d.x + 1) * (width / 3))
+    .attr("r", 30)
+
+  d3.select(id + " svg")
+    .selectAll("line.vert")
+    .data(d3.range(2))
+    .transition()
+    .duration(1000)
+    .attr("x1", (d) => (d + 1) * (width / 3))
+    .attr("x2", (d) => (d + 1) * (width / 3))
 }
