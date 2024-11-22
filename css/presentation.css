@@ -253,3 +253,9 @@ blockquote.large-quote {
 .impress-on-composition-img-vert-2 #comp-img-vert-2 {
   display: block;
 }
+
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+  place-content: space-between;
+}
